@@ -27,19 +27,7 @@ class Grid {
     int col = 400;
     CellType *cells;
 
-    Grid() {
-        cells = new CellType[rows * col];
-
-        for (int i = 0; i < rows * col; i++) {
-            int rand_type = GetRandomValue(0, 5);
-
-            if (rand_type == 0) {
-                cells[i] = Sand;
-            } else {
-                cells[i] = Empty;
-            }
-        }
-    }
+    Grid() { cells = new CellType[rows * col]; }
 
     Color GetCellColour(int x, int y) { return Cell::GetColour(cells[y * col + x]); }
 
@@ -84,7 +72,38 @@ int main() {
     Grid g;
     Cell c;
 
+    int cursor_size = 10; // TODO: allow user to change via GUI
+
     while (!WindowShouldClose()) {
+        Vector2 mouse_pos = GetMousePosition();
+
+        if (IsMouseButtonDown(MOUSE_BUTTON_LEFT)) {
+            int grid_x = mouse_pos.x / c.cell_h;
+            int grid_y = mouse_pos.y / c.cell_w;
+
+            for (int y = grid_y - cursor_size / 2; y <= grid_y + cursor_size / 2; y++) {
+                for (int x = grid_x - cursor_size / 2; x <= grid_x + cursor_size / 2; x++) {
+                    if (x >= 0 && x < g.col && y >= 0 && y < g.rows) {
+                        g.cells[y * g.col + x] = Sand;
+                    }
+                }
+            }
+        }
+
+        if (IsMouseButtonDown(MOUSE_BUTTON_RIGHT)) {
+            Vector2 mouse_pos = GetMousePosition();
+            int grid_x = mouse_pos.x / c.cell_h;
+            int grid_y = mouse_pos.y / c.cell_w;
+
+            for (int y = grid_y - cursor_size / 2; y <= grid_y + cursor_size / 2; y++) {
+                for (int x = grid_x - cursor_size / 2; x <= grid_x + cursor_size / 2; x++) {
+                    if (x >= 0 && x < g.col && y >= 0 && y < g.rows) {
+                        g.cells[y * g.col + x] = Empty;
+                    }
+                }
+            }
+        }
+
         // update
         g.Update();
 
