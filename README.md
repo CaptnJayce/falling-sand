@@ -9,7 +9,7 @@ pacman -S clang raylib
 ```
 
 For Windows:\
-[Windows](https://clang.llvm.org/get_started.html)\
+[Clang](https://clang.llvm.org/get_started.html)\
 [Raylib](https://www.raylib.com/)
 
 ### Running:
