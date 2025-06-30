@@ -9,5 +9,9 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(raylib)
 
-add_executable(FallingSand main.cpp)
+add_executable(FallingSand 
+    src/Main.cpp
+    src/Grid.cpp
+    src/Cell.cpp
+)
 target_link_libraries(FallingSand raylib)
