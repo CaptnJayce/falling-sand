@@ -16,13 +16,7 @@ For Windows:\
 cd into repository
 ```
 mkdir build
-```
-```
 cd build
-```
-```
 cmake --build .
-```
-```
 ./FallingSand
 ```
