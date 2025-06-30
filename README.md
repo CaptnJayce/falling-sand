@@ -5,26 +5,24 @@ I recommend installing gcc via your package manager or with MinGW
 
 For Arch Linux:
 ```
-pacman -S gcc raylib
+pacman -S clang raylib
 ```
 
 For Windows:\
-[GCC install guide for Windows](https://dev.to/gamegods3/how-to-install-gcc-in-windows-10-the-easier-way-422j)\
-For Raylib, just go to the website linked at the top and click Download. 
+[Windows](https://clang.llvm.org/get_started.html)\
+[Raylib](https://www.raylib.com/)
 
 ### Running:
-Run the bash script with: 
+cd into repository
 ```
-bash build.bash 
+mkdir build
 ```
-or compile directly:
 ```
-g++ -lraylib main.cpp -o sands
-./sands
+cd build
 ```
-
-if "./sands" doesn't work then run the following command:
 ```
-chmod +x ./sands
+cmake --build .
 ```
-
+```
+./FallingSand
+```
