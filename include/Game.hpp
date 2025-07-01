@@ -13,11 +13,11 @@ class Game {
     void Update();
     void Render();
 
-    int width;
-    int height;
-    const char *title;
-    Grid grid;
-    int cursor_size;
-    int current_type;
-    Vector2 mouse_pos;
+    int m_width;
+    int m_height;
+    const char *m_title;
+    Grid m_grid;
+    int m_cursor_size;
+    int m_current_type;
+    Vector2 m_mouse_pos;
 };
