@@ -13,5 +13,7 @@ add_executable(FallingSand
     src/Main.cpp
     src/Grid.cpp
     src/Cell.cpp
+    src/Game.cpp
+    src/GUI.cpp
 )
 target_link_libraries(FallingSand raylib)

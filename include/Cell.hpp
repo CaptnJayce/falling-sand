@@ -8,8 +8,8 @@ enum CellType {
 };
 
 struct Cell {
-    int cell_w = 4;
-    int cell_h = 4;
+    static const int cell_w = 4;
+    static const int cell_h = 4;
 
     static Color GenerateColour(Color c);
     static Color GetColour(CellType type);
