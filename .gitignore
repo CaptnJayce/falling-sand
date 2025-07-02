@@ -108,6 +108,7 @@ GTAGS
 zig-cache/
 zig-out/
 build/
+build-mingw/
 build-*/
 docgen_tmp/
 
