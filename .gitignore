@@ -32,7 +32,6 @@ Thumbs.db
 *.log
 .vs
 
-[Bb]in
 [Dd]ebug/
 *.sbr
 *.sdf
